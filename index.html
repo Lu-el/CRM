@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="./fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Inter-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="./fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Inter-SemiBold.woff" as="font" type="font/woff" crossorigin>
+  <title>Добавить ТОВАР</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <section class="add-good">
+    <div class="container">
+      <h1 class="add-good__title">
+        Добавить ТОВАР
+      </h1>
+      <button class="add-good__btn btn btn_color_transparent" type="button">
+        <span class="btn__text visually-hidden">Закрыть окно</span>
+        <svg class="btn__svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round" />
+          <path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </button>
+      <form method="post" action="https://jsonplaceholder.typicode.com/posts" class="add-good__form form">
+        <fieldset class="form__card">
+          <div class="form__field field">
+            <label for="name-good" class="field__label">Наименование</label>
+            <input class="field__input" type="text" name="name" id="name-good">
+          </div>
+
+          <div class="form__field field">
+            <label class="field__label" for="category">Категория</label>
+            <input class="field__input" type="text" name="category" id="category">
+          </div>
+
+          <div class="form__field field">
+            <label class="field__label" for="unit">Единицы измерения</label>
+            <input class="field__input" type="text" name="unit" id="unit">
+          </div>
+
+          <fieldset class="form__field field field_position_horizontal">
+            <legend class="field__label">Дисконт</legend>
+            <input type="checkbox" class="field__checkbox">
+            <input class="field__input" type="text" name="discount" disabled>
+          </fieldset>
+
+          <div class="form__field field">
+            <label class="field__label" for="description">Описание</label>
+            <textarea class="field__input field__input_hieght_xl" name="description" id="description"></textarea>
+          </div>
+
+          <div class="form__field field">
+            <label class="field__label" for="count">Количество</label>
+            <input class="field__input" type="number" name="count" id="count">
+          </div>
+
+          <div class="form__field field">
+            <label class="field__label" for="price">Цена</label>
+            <input class="field__input" type="number" name="price" id="price">
+          </div>
+        </fieldset>
+
+        <div class="form__wrapper-btn">
+          <button type="submit" class="form__send-btn">Добавить товар</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>
