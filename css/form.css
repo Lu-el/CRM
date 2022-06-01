@@ -1,14 +1,26 @@
 .form__card {
   padding: 28px;
-  margin-bottom: 32px;
-  min-width: 580px;
+  margin-bottom: 27px;
+  display: grid;
+  grid-auto-rows: 60px;
+  grid-template-columns: repeat(2, calc(50% - 14px));
   background-color: #FFFFFF;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  /* gap: 12px 24px; */
+  gap: 12px 26px;
 }
 
-.form__field:not(:last-child) {
-  margin-bottom: 12px;
+.form__field_column_last {
+  grid-row: 5;
+  grid-column: 2;
+  align-self: end;
+}
+
+.form__field_row_double {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
 }
 
 .form__checkbox {
@@ -18,9 +30,9 @@
 }
 
 .form__wrapper-btn {
-  text-align: end;
-  padding-right: 28px;
-  padding-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 28px;
 }
 
 .form__send-btn {
@@ -34,4 +46,18 @@
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
+}
+
+.form__price {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--main-font-color);
+}
+
+.form__number {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #6D5BD0;
 }

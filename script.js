@@ -14,15 +14,15 @@
 
 {
   const productName = prompt('Введите название товара');
-  const productAmount = prompt('Введите кол-во товара (только целое число)');
+  const productAmount = +prompt('Введите кол-во товара (только целое число)');
   const category = prompt('Введите название категории');
-  const price = prompt('Введите стоимость товара');
+  const price = +prompt('Введите стоимость товара');
   const orderSum = productAmount * price;
 
   console.log(typeof productName);
-  console.log(typeof +productAmount);
+  console.log(typeof productAmount);
   console.log(typeof category);
-  console.log(typeof +price);
+  console.log(typeof price);
 
   console.log(
     `Вы решили приобрести ${productAmount} единицы товара "${productName}",

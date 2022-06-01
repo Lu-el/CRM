@@ -12,15 +12,44 @@
   <title>Добавить ТОВАР</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="script.js" defer></script>
-  <script src="einstei.js" defer></script>
+  <!-- <script src="einstei.js" defer></script> -->
 </head>
 
 <body>
   <section class="add-good">
     <div class="container">
-      <h1 class="add-good__title">
-        Добавить ТОВАР
-      </h1>
+      <div class="add-good__caption visually-hidden">
+        <h1 class="add-good__title">
+          Добавить ТОВАР
+        </h1>
+      </div>
+
+      <div class="add-good__caption ">
+        <div class="add-good__changing">
+          <h1 class="add-good__title">
+            Изменить ТОВАР
+          </h1>
+          <div class="add-good__id">
+            <p class="add-good__text">id: 201910241</p>
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_107_534)">
+                <path
+                  d="M11.6721 3.6456L13.2295 5.20223L11.6721 3.6456ZM12.6736 2.27426L8.46254 6.48534C8.24496 6.70262 8.09657 6.97945 8.03607 7.28093L7.64709 9.22801L9.59417 8.8383C9.89565 8.77801 10.1721 8.63021 10.3898 8.41256L14.6008 4.20149C14.7274 4.07495 14.8278 3.92472 14.8962 3.75938C14.9647 3.59404 15 3.41684 15 3.23788C15 3.05892 14.9647 2.88171 14.8962 2.71637C14.8278 2.55104 14.7274 2.40081 14.6008 2.27426C14.4743 2.14772 14.3241 2.04734 14.1587 1.97886C13.9934 1.91037 13.8162 1.87512 13.6372 1.87512C13.4583 1.87512 13.2811 1.91037 13.1157 1.97886C12.9504 2.04734 12.8002 2.14772 12.6736 2.27426V2.27426Z"
+                  stroke="#6E6893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M13.5295 10.6986V12.9045C13.5295 13.2945 13.3746 13.6686 13.0988 13.9444C12.823 14.2202 12.449 14.3751 12.0589 14.3751H3.9706C3.58058 14.3751 3.20652 14.2202 2.93073 13.9444C2.65494 13.6686 2.5 13.2945 2.5 12.9045V4.81618C2.5 4.42616 2.65494 4.0521 2.93073 3.77631C3.20652 3.50052 3.58058 3.34558 3.9706 3.34558H6.17651"
+                  stroke="#6E6893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+              <defs>
+                <clipPath id="clip0_107_534">
+                  <rect width="15" height="15" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+
       <button class="add-good__btn btn btn_color_transparent" type="button">
         <span class="btn__text visually-hidden">Закрыть окно</span>
         <svg class="btn__svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,25 +64,19 @@
             <input class="field__input" type="text" name="name" id="name-good">
           </div>
 
-          <div class="form__field field">
+          <div class="form__field form__field_row_double field">
+            <label class="field__label" for="description">Описание</label>
+            <textarea class="field__input field__input_hieght_xl" name="description" id="description"></textarea>
+          </div>
+
+          <div class="form__fieldfield">
             <label class="field__label" for="category">Категория</label>
             <input class="field__input" type="text" name="category" id="category">
           </div>
 
-          <div class="form__field field">
+          <div class="form__fieldfield">
             <label class="field__label" for="unit">Единицы измерения</label>
             <input class="field__input" type="text" name="unit" id="unit">
-          </div>
-
-          <fieldset class="form__field field field_position_horizontal">
-            <legend class="field__label">Дисконт</legend>
-            <input type="checkbox" class="field__checkbox">
-            <input class="field__input" type="text" name="discount" disabled>
-          </fieldset>
-
-          <div class="form__field field">
-            <label class="field__label" for="description">Описание</label>
-            <textarea class="field__input field__input_hieght_xl" name="description" id="description"></textarea>
           </div>
 
           <div class="form__field field">
@@ -61,13 +84,27 @@
             <input class="field__input" type="number" name="count" id="count">
           </div>
 
+          <fieldset class="form__fieldfield field_position_horizontal">
+            <legend class="field__label">Дисконт</legend>
+            <input type="checkbox" class="field__checkbox">
+            <input class="field__input" type="text" name="discount" disabled>
+          </fieldset>
+
           <div class="form__field field">
             <label class="field__label" for="price">Цена</label>
             <input class="field__input" type="number" name="price" id="price">
           </div>
+
+          <div class="form__field form__field_column_last field">
+            <label class="field__btn" for="file">Добавить изображение</label>
+            <input class="field__input visually-hidden" type="file" name="image" id="file" accept=".jpg, .jpeg, .png">
+          </div>
         </fieldset>
 
         <div class="form__wrapper-btn">
+          <p class="form__price">
+            Итоговая стоимость: <span class="form__number">$&nbsp;900.00</span>
+          </p>
           <button type="submit" class="form__send-btn">Добавить товар</button>
         </div>
       </form>
