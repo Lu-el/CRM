@@ -74,12 +74,24 @@
   min-height: 84%;
 }
 
+.field__error {
+  align-self: end;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #D80101;
+}
+
 .field__btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 39px;
+  height: 100%;
   color: #FFFFFF;
   font-weight: 600;
   font-size: 14px;

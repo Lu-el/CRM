@@ -11,10 +11,9 @@
   gap: 12px 26px;
 }
 
-.form__field_column_last {
-  grid-row: 5;
-  grid-column: 2;
+.form__field_row_last {
   align-self: end;
+  height: 39px;
 }
 
 .form__field_row_double {
