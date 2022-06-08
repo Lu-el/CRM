@@ -1,0 +1,40 @@
+'use strict';
+
+const cart = {
+  items: [],
+  totalPrice: 0,
+  count: 0,
+
+  getTotalPrice() {
+    return this.totalPrice;
+  },
+
+  add(name, price, amount = 1) {
+    const obj = {
+      name,
+      price,
+      amount,
+    };
+    this.items.push(obj);
+    this.totalPrice += obj.price * obj.amount;
+    this.count += 1;
+  },
+
+  clear() {
+    this.items = [];
+    this.totalPrice = 0;
+    this.count = 0;
+  },
+
+  print() {
+    const jsonObj = JSON.stringify(this.items)
+    console.log(jsonObj);
+    console.log(this.totalPrice);
+  }
+}
+
+cart.add('Пылесос', 25500);
+cart.add('Чехол для мебели', 1800, 7);
+cart.add('Торт', 520, 3);
+
+cart.print();
