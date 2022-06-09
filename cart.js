@@ -16,8 +16,18 @@ const cart = {
       amount,
     };
     this.items.push(obj);
-    this.totalPrice += obj.price * obj.amount;
-    this.count += 1;
+    this.calculateItemPrice();
+    this.increaseCount(1);
+  },
+
+  increaseCount(number) {
+    this.count += number;
+  },
+
+  calculateItemPrice() {
+    this.totalPrice = this.items.reduce((acc, item) => {
+      return acc + item.price * item.amount
+    }, 0)
   },
 
   clear() {
