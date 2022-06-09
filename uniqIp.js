@@ -6,6 +6,3 @@ const amountUniqIp = (arr) => {
   return list.size;
 }
 
-
-
-
