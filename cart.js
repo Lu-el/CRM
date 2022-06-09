@@ -2,11 +2,10 @@
 
 const cart = {
   items: [],
-  totalPrice: 0,
   count: 0,
 
   get totalPrice() {
-    return this.totalPrice = this.calculateItemPrice();
+    return this.calculateItemPrice();
   },
 
   add(name, price, amount = 1) {
@@ -16,8 +15,8 @@ const cart = {
       amount,
     };
     this.items.push(obj);
-    this.calculateItemPrice();
-    this.increaseCount(1);
+    this.increaseCount(obj.amount);
+    this.totalPrice;
   },
 
   increaseCount(number) {
@@ -25,7 +24,7 @@ const cart = {
   },
 
   calculateItemPrice() {
-    this.items.reduce((acc, item) => {
+    return this.items.reduce((acc, item) => {
       return acc + item.price * item.amount
     }, 0)
   },
