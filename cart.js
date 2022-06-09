@@ -24,9 +24,8 @@ const cart = {
   },
 
   calculateItemPrice() {
-    return this.items.reduce((acc, item) => {
-      return acc + item.price * item.amount
-    }, 0)
+    return this.items.reduce(((acc, item) => acc + item.price * item.amount),
+        0);
   },
 
   clear() {
@@ -36,11 +35,11 @@ const cart = {
   },
 
   print() {
-    const jsonObj = JSON.stringify(this.items)
+    const jsonObj = JSON.stringify(this.items);
     console.log(jsonObj);
     console.log(this.totalPrice);
-  }
-}
+  },
+};
 
 cart.add('Пылесос', 25500);
 cart.add('Чехол для мебели', 1800, 7);
