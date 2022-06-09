@@ -17,7 +17,7 @@ const cart = {
     };
     this.items.push(obj);
     this.calculateItemPrice();
-    this.increaseCount(1);
+    this.increaseCount(obj.amount);
   },
 
   increaseCount(number) {
