@@ -3,22 +3,22 @@
 const cart = {
   items: [],
   count: 0,
-  discount: 0,
+  _discount: 0,
 
   get totalPrice() {
     return this.calculateItemPrice();
   },
 
-  setDiscount(promocode) {
+  set discount(promocode) {
     switch (promocode) {
-      case promocode = 'METHED':
-        this.discount = 15;
+      case 'METHED':
+        this._discount = 15;
         break;
-      case promocode = 'NEWYEAR':
-        this.discount = 21;
+      case 'NEWYEAR':
+        this._discount = 21;
         break;
       default:
-        this.discount = 0;
+        this._discount = 0;
         break;
     }
   },
@@ -41,7 +41,7 @@ const cart = {
   calculateItemPrice() {
     const generall = this.items.reduce(((acc, item) => acc + item.price * item.amount),
         0);
-    return generall - this.discount * generall / 100;
+    return generall - this._discount * generall / 100;
   },
 
   clear() {
