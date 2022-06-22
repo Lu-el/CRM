@@ -1,7 +1,10 @@
 .add-good {
+  display: none;
   padding-top: 38px;
   position: fixed;
   inset: 0;
+  overflow-y: auto;
+  background-color: var(--bkg-color);
 }
 
 .add-good__title {
@@ -50,8 +53,31 @@
   border: 0;
 }
 
-@media (max-width:780px) {
+.add-good__pencil {
+  background-color: transparent;
+  border: 0;
+}
+
+@media (max-width:768px) {
+  .add-good__changing {
+    justify-content: left;
+    gap: 50px;
+  }
+
   .btn_color_transparent {
     right: calc((100% - 580px) / 2);
+  }
+}
+
+@media (max-width:600px) {
+  .add-good__changing {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .btn_color_transparent {
+    right: 20px;
+    top: 12px;
   }
 }
